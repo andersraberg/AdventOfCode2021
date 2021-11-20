@@ -1,4 +1,4 @@
-package se.anders_raberg.adventofcode2020.utilities;
+package se.anders_raberg.adventofcode2021.utilities;
 
 @FunctionalInterface
 public interface TriFunction<T, U, V, R> {

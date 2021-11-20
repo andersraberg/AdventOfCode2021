@@ -1,4 +1,4 @@
-package se.anders_raberg.adventofcode2020.utilities;
+package se.anders_raberg.adventofcode2021.utilities;
 
 import java.util.ArrayList;
 import java.util.HashSet;
