@@ -1,6 +1,7 @@
-package se.anders_raberg.adventofcode2020;
+package se.anders_raberg.adventofcode2021;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import se.anders_raberg.adventofcode2020.utilities.Pair;
+import se.anders_raberg.adventofcode2021.utilities.Pair;
 
 public class PairTest {
 

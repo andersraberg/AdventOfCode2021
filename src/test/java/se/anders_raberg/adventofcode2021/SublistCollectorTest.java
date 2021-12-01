@@ -1,4 +1,4 @@
-package se.anders_raberg.adventofcode2020;
+package se.anders_raberg.adventofcode2021;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import se.anders_raberg.adventofcode2020.utilities.SublistCollector;
+import se.anders_raberg.adventofcode2021.utilities.SublistCollector;
 
 public class SublistCollectorTest {
 
