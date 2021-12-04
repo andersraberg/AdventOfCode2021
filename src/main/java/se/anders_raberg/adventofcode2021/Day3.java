@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.logging.Logger;
 
 public class Day3 {
@@ -39,7 +39,7 @@ public class Day3 {
         LOGGER.info("Part 2: " + oxygen * scrubber);
     }
 
-    private static String findRating(List<String> binaryNumbers, Function<Integer, Character> fun) {
+    private static String findRating(List<String> binaryNumbers, IntFunction<Character> fun) {
         List<String> tmp = binaryNumbers;
         for (int i = 0; i < tmp.get(0).length(); i++) {
             int diffOnesZeros = countDiffAtPos(tmp, i);

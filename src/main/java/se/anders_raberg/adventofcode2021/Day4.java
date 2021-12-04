@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import com.google.common.collect.Table.Cell;
 
 public class Day4 {
     private static final Logger LOGGER = Logger.getLogger(Day4.class.getName());
@@ -71,7 +72,7 @@ public class Day4 {
     }
 
     private static int getScore(Table<Integer, Integer, Integer> table) {
-        return table.cellSet().stream().mapToInt(c -> c.getValue()).filter(v -> v != CELL_MARKED_VALUE).sum();
+        return table.cellSet().stream().mapToInt(Cell::getValue).filter(v -> v != CELL_MARKED_VALUE).sum();
     }
 
 }

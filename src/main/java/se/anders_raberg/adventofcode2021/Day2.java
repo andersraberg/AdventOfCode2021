@@ -58,7 +58,7 @@ public class Day2 {
     }
 
     private static int filterAndSum(List<Pair<Direction, Integer>> movements, Direction direction) {
-        return movements.stream().filter(d -> d.first() == direction).mapToInt(d -> d.second()).sum();
+        return movements.stream().filter(d -> d.first() == direction).mapToInt(Pair::second).sum();
     }
 
 }
