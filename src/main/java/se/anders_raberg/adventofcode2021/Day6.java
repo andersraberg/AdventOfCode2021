@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -30,17 +31,17 @@ public class Day6 {
         Map<Integer, Long> timersByValue = countOccurances(fishTimers);
 
         List<Integer> fishTimersFirstHalfOfDays = new ArrayList<>();
-        for (Integer timer : timersByValue.keySet()) {
-            List<Integer> generate = generate(List.of(timer), days / 2);
-            for (int i = 0; i < timersByValue.get(timer); i++) {
+        for (Entry<Integer, Long> timerEntry : timersByValue.entrySet()) {
+            List<Integer> generate = generate(List.of(timerEntry.getKey()), days / 2);
+            for (int i = 0; i < timerEntry.getValue(); i++) {
                 fishTimersFirstHalfOfDays.addAll(generate);
             }
         }
 
         timersByValue = countOccurances(fishTimersFirstHalfOfDays);
         long sum = 0;
-        for (Integer integer2 : timersByValue.keySet()) {
-            sum += generate(List.of(integer2), days / 2).size() * timersByValue.get(integer2);
+        for (Entry<Integer, Long> timerEntry : timersByValue.entrySet()) {
+            sum += generate(List.of(timerEntry.getKey()), days / 2).size() * timerEntry.getValue();
         }
         return sum;
     }
