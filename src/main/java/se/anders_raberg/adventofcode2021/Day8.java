@@ -27,7 +27,7 @@ public class Day8 {
 
         long sum = signalPatterns.stream().map(Pair::second).mapToLong(z -> countOccurences(z, Set.of(2, 4, 3, 7)))
                 .sum();
-        LOGGER.info(String.format("Part 1: %d", sum));
+        LOGGER.info(() -> String.format("Part 1: %d", sum));
 
         Map<String, String> theMap = new HashMap<>();
         int sum2 = 0;

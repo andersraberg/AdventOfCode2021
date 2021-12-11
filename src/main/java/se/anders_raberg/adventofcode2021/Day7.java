@@ -21,9 +21,9 @@ public class Day7 {
 
         Integer maxTargetPos = crabPositions.stream().max(Integer::compare).orElseThrow();
 
-        LOGGER.info(String.format("Part 1: %d",
+        LOGGER.info(() -> String.format("Part 1: %d",
                 IntStream.range(0, maxTargetPos).map(p -> costAllPart1(crabPositions, p)).min().orElseThrow()));
-        LOGGER.info(String.format("Part 2: %d",
+        LOGGER.info(() -> String.format("Part 2: %d",
                 IntStream.range(0, maxTargetPos).map(p -> costAllPart2(crabPositions, p)).min().orElseThrow()));
     }
 

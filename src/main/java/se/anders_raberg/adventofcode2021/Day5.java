@@ -45,7 +45,7 @@ public class Day5 {
 
         // Part2
         diagonalLines.forEach(l -> pointsOnLines.addAll(walkLine(l)));
-        LOGGER.info(String.format("Part 2: %d", countOverlapping(pointsOnLines)));
+        LOGGER.info(() -> String.format("Part 2: %d", countOverlapping(pointsOnLines)));
     }
 
     private static List<Point> walkLine(Line line) {
