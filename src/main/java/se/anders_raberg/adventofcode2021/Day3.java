@@ -31,12 +31,12 @@ public class Day3 {
 
         int gammaVal = Integer.valueOf(gamma.toString(), 2);
         int epsilonVal = Integer.valueOf(epsilon.toString(), 2);
-        LOGGER.info("Part 1: " + gammaVal * epsilonVal);
+        LOGGER.info(String.format("Part 1: %d", gammaVal * epsilonVal));
 
         // Part 2
         int oxygen = Integer.valueOf(findRating(binaryNumbers, x -> x >= 0 ? '1' : '0'), 2);
         int scrubber = Integer.valueOf(findRating(binaryNumbers, x -> x >= 0 ? '0' : '1'), 2);
-        LOGGER.info("Part 2: " + oxygen * scrubber);
+        LOGGER.info(String.format("Part 2: %d", oxygen * scrubber));
     }
 
     private static String findRating(List<String> binaryNumbers, IntFunction<Character> fun) {

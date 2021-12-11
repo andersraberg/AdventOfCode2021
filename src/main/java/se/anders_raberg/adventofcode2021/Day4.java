@@ -52,8 +52,8 @@ public class Day4 {
             }
         }
 
-        LOGGER.info("Part 1: " + scores.get(0));
-        LOGGER.info("Part 2: " + scores.get(scores.size() - 1));
+        LOGGER.info(String.format("Part 1: %s", scores.get(0)));
+        LOGGER.info(String.format("Part 2: %s", scores.get(scores.size() - 1)));
     }
 
     private static void mark(Table<Integer, Integer, Integer> table, int drawnNumber) {

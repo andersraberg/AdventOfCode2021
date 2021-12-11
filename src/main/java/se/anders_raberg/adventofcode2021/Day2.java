@@ -29,7 +29,7 @@ public class Day2 {
         int down = filterAndSum(movements, Direction.DOWN);
         int forward = filterAndSum(movements, Direction.FORWARD);
 
-        LOGGER.info("Part 1: " + (down - up) * forward);
+        LOGGER.info(String.format("Part 1: %d", (down - up) * forward));
 
         // Part 2
         int aim = 0;
@@ -49,7 +49,7 @@ public class Day2 {
                 break;
             }
         }
-        LOGGER.info("Part 2: " + (depth * horizPos));
+        LOGGER.info(String.format("Part 2: %d", (depth * horizPos)));
     }
 
     private static Pair<Direction, Integer> parse(String data) {

@@ -23,8 +23,8 @@ public class Day6 {
                 .stream(new String(Files.readAllBytes(Paths.get("inputs/input6.txt"))).trim().split(","))
                 .map(Integer::parseInt).toList();
 
-        LOGGER.info("Part 1: " + countGeneratedFishTimers(data, 80));
-        LOGGER.info("Part 2: " + countGeneratedFishTimers(data, 256));
+        LOGGER.info(String.format("Part 1: %d", countGeneratedFishTimers(data, 80)));
+        LOGGER.info(String.format("Part 2: %d", countGeneratedFishTimers(data, 256)));
     }
 
     private static long countGeneratedFishTimers(List<Integer> fishTimers, int days) {

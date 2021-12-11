@@ -19,8 +19,8 @@ public class Day1 {
                 .map(Integer::valueOf) //
                 .toList();
 
-        LOGGER.info("Part 1: " + countIncreases(data));
-        LOGGER.info("Part 2: " + countIncreases(generateRollingSums(data)));
+        LOGGER.info(() -> String.format("Part 1: %d", countIncreases(data)));
+        LOGGER.info(() -> String.format("Part 2: %d", countIncreases(generateRollingSums(data))));
     }
 
     private static int countIncreases(List<Integer> data) {
