@@ -73,7 +73,7 @@ public class Day8 {
             sum2 += outputValue;
         }
 
-        LOGGER.info(String.format("Part 2: %d", sum2));
+        LOGGER.info(() -> String.format("Part 2: %d", sum2));
     }
 
     private static String sort(String str) {

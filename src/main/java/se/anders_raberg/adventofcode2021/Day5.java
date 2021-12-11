@@ -41,7 +41,7 @@ public class Day5 {
         // Part 1
         horizontalLines.forEach(l -> pointsOnLines.addAll(walkLine(l)));
         verticalLines.forEach(l -> pointsOnLines.addAll(walkLine(l)));
-        LOGGER.info(String.format("Part 1: %d", countOverlapping(pointsOnLines)));
+        LOGGER.info(() -> String.format("Part 1: %d", countOverlapping(pointsOnLines)));
 
         // Part2
         diagonalLines.forEach(l -> pointsOnLines.addAll(walkLine(l)));
