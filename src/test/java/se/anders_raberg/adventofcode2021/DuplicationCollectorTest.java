@@ -23,14 +23,4 @@ class DuplicationCollectorTest {
         assertEquals(expected, actual);
     }
 
-    // @Test
-    // public void test2() {
-    // List<List<Integer>> expected = Arrays.asList(Arrays.asList(1, 2, 3, 4),
-    // Arrays.asList(5, 6, 7, 8));
-    // List<List<Integer>> actual = TESTEE.stream().collect(new
-    // SublistCollector<>(4, false));
-    //
-    // assertEquals(expected, actual);
-    // }
-
 }

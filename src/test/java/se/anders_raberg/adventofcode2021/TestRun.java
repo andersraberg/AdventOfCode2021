@@ -7,8 +7,6 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 class TestRun {
-    DaysMain testee = new DaysMain();
-
     @Test
 	void testMain() throws IOException {
         DaysMain.main(null);

@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
@@ -34,7 +35,7 @@ public class Day9 {
             }
         }
 
-        List<Cell<Integer, Integer, Integer>> lowPoints = BOARD.cellSet().stream().filter(c -> isLowPoint(c, BOARD))
+        List<Cell<Integer, Integer, Integer>> lowPoints = BOARD.cellSet().stream().filter(Day9::isLowPoint)
                 .toList();
 
         LOGGER.info(() -> String.format("Part 1: %d", lowPoints.stream().mapToInt(c -> c.getValue() + 1).sum()));
@@ -62,13 +63,11 @@ public class Day9 {
         }
     }
 
-    private static boolean isLowPoint(Cell<Integer, Integer, Integer> cell, Table<Integer, Integer, Integer> board) {
-        return List
-                .of(checkForBorder(board.get(cell.getRowKey() - 1, cell.getColumnKey())),
-                        checkForBorder(board.get(cell.getRowKey() + 1, cell.getColumnKey())),
-                        checkForBorder(board.get(cell.getRowKey(), cell.getColumnKey() - 1)),
-                        checkForBorder(board.get(cell.getRowKey(), cell.getColumnKey() + 1)))
-                .stream().allMatch(v -> v > cell.getValue());
+    private static boolean isLowPoint(Cell<Integer, Integer, Integer> cell) {
+        return Stream.of(checkForBorder(Day9.BOARD.get(cell.getRowKey() - 1, cell.getColumnKey())),
+                checkForBorder(Day9.BOARD.get(cell.getRowKey() + 1, cell.getColumnKey())),
+                checkForBorder(Day9.BOARD.get(cell.getRowKey(), cell.getColumnKey() - 1)),
+                checkForBorder(Day9.BOARD.get(cell.getRowKey(), cell.getColumnKey() + 1))).allMatch(v -> v > cell.getValue());
     }
 
     private static int checkForBorder(Integer value) {

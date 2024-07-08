@@ -47,7 +47,7 @@ public class Day13 {
             }
         }
 
-        paper = foldingInstructions.get(0).equals("x") ? foldHoriz(paper) : foldVert(paper);
+        paper = foldingInstructions.getFirst().equals("x") ? foldHoriz(paper) : foldVert(paper);
         LOGGER.info(String.format("Part 1: %d", count(paper)));
 
         for (int i = 1; i < foldingInstructions.size(); i++) {

@@ -53,7 +53,7 @@ public class Day10 {
         Deque<Character> openingDelimiters = new ArrayDeque<>();
         for (int i = 0; i < line.length(); i++) {
             char current = line.charAt(i);
-            if (DELIMITER_PAIRS.keySet().contains(current)) {
+            if (DELIMITER_PAIRS.containsKey(current)) {
                 openingDelimiters.push(current);
             } else {
                 openingDelimiters.pop();
@@ -68,7 +68,7 @@ public class Day10 {
         Deque<Character> openingDelimiters = new ArrayDeque<>();
         for (int i = 0; i < line.length(); i++) {
             char current = line.charAt(i);
-            if (DELIMITER_PAIRS.keySet().contains(current)) {
+            if (DELIMITER_PAIRS.containsKey(current)) {
                 openingDelimiters.push(current);
             } else {
                 Character pop = openingDelimiters.pop();

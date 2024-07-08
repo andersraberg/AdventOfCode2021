@@ -29,7 +29,7 @@ public class Day12 {
 
         ImmutableGraph.Builder<String> graphBuilder = //
                 GraphBuilder.undirected() //
-                        .<String>immutable();
+                        .immutable();
 
         for (String edge : edges) {
             String[] split = edge.split("-");

@@ -14,7 +14,7 @@ public class SublistCollector<T> implements Collector<T, List<List<T>>, List<Lis
     private final int _size;
     private final boolean _includeIncomplete;
     
-    private List<T> _tmpList = new ArrayList<>();
+    private final List<T> _tmpList = new ArrayList<>();
 
     public SublistCollector(int size, boolean includeIncomplete) {
         _size = size;

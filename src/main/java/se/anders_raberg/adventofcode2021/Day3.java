@@ -18,7 +18,7 @@ public class Day3 {
         List<String> binaryNumbers = Files.readAllLines(Paths.get("inputs/input3.txt")).stream() //
                 .toList();
 
-        int wordSize = binaryNumbers.get(0).length();
+        int wordSize = binaryNumbers.getFirst().length();
 
         // Part 1
         StringBuilder gamma = new StringBuilder();
@@ -41,13 +41,13 @@ public class Day3 {
 
     private static String findRating(List<String> binaryNumbers, IntFunction<Character> fun) {
         List<String> tmp = binaryNumbers;
-        for (int i = 0; i < tmp.get(0).length(); i++) {
+        for (int i = 0; i < tmp.getFirst().length(); i++) {
             int diffOnesZeros = countDiffAtPos(tmp, i);
             int index = i;
             char ch = fun.apply(diffOnesZeros);
             tmp = tmp.stream().filter(s -> s.charAt(index) == ch).toList();
             if (tmp.size() == 1) {
-                return tmp.get(0);
+                return tmp.getFirst();
             }
         }
         throw new IllegalArgumentException();

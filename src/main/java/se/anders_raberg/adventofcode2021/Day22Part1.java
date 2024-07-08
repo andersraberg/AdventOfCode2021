@@ -23,7 +23,7 @@ public class Day22Part1 {
     private static final Range<Integer> INIT_AREA_RANGE = Range.closed(-50, 50);
 
     private enum Mode {
-        ON, OFF;
+        ON, OFF
     }
 
     private record Coord(int x, int y, int z) {

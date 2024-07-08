@@ -12,7 +12,7 @@ public class Day2 {
     private static final Logger LOGGER = Logger.getLogger(Day2.class.getName());
 
     private enum Direction {
-        UP, DOWN, FORWARD;
+        UP, DOWN, FORWARD
     }
 
     private Day2() {

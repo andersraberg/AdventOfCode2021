@@ -19,7 +19,7 @@ public class Day7 {
                 .stream(new String(Files.readAllBytes(Paths.get("inputs/input7.txt"))).trim().split(","))
                 .map(Integer::parseInt).toList();
 
-        Integer maxTargetPos = crabPositions.stream().max(Integer::compare).orElseThrow();
+        int maxTargetPos = crabPositions.stream().max(Integer::compare).orElseThrow();
 
         LOGGER.info(() -> String.format("Part 1: %d",
                 IntStream.range(0, maxTargetPos).map(p -> costAllPart1(crabPositions, p)).min().orElseThrow()));

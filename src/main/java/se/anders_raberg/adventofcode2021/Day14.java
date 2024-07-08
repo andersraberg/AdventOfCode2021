@@ -27,12 +27,12 @@ public class Day14 {
 
     public static void run() throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("inputs/input14.txt"));
-        template = lines.get(0);
+        template = lines.getFirst();
 
         for (String line : lines.subList(2, lines.size())) {
             Matcher m = RULE_PATTERN.matcher(line);
             m.find();
-            RULES.put(m.group(1) + m.group(2), List.of(m.group(1) + m.group(3), m.group(3) + m.group(2)));
+             RULES.put(m.group(1) + m.group(2), List.of(m.group(1) + m.group(3), m.group(3) + m.group(2)));
         }
 
         List<String> startPairs = new ArrayList<>();
@@ -55,9 +55,9 @@ public class Day14 {
 
         Map<String, Long> elementCounters = new HashMap<>(Map.of(template.substring(template.length() - 1), 1L));
 
-        tmp.entrySet().forEach(e -> {
-            String firstInPair = e.getKey().substring(0, 1);
-            elementCounters.merge(firstInPair, e.getValue(), Long::sum);
+        tmp.forEach((key, value) -> {
+            String firstInPair = key.substring(0, 1);
+            elementCounters.merge(firstInPair, value, Long::sum);
         });
 
         Collection<Long> values = elementCounters.values();

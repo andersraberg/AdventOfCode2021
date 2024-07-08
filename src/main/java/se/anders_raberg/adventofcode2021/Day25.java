@@ -22,7 +22,7 @@ public class Day25 {
                 .toList();
 
         height = lines.size();
-        width = lines.get(0).length();
+        width = lines.getFirst().length();
 
         char[][] map = new char[height][width];
 
@@ -35,8 +35,7 @@ public class Day25 {
         int steps = 0;
         do {
             moved = false;
-            char[][] nextMap = moveSouthbound(moveEastbound(map));
-            map = nextMap;
+            map = moveSouthbound(moveEastbound(map));
             steps++;
         } while (moved);
 

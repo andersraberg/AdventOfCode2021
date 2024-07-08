@@ -51,9 +51,9 @@ public class Day16 {
             1, values -> values.stream().reduce(1L, Math::multiplyExact), //
             2, Collections::min, //
             3, Collections::max, //
-            5, values -> values.get(0) > values.get(1) ? 1L : 0L, //
-            6, values -> values.get(0) < values.get(1) ? 1L : 0L, //
-            7, values -> values.get(0).equals(values.get(1)) ? 1L : 0L);
+            5, values -> values.getFirst() > values.get(1) ? 1L : 0L, //
+            6, values -> values.getFirst() < values.get(1) ? 1L : 0L, //
+            7, values -> values.getFirst().equals(values.get(1)) ? 1L : 0L);
 
     private Day16() {
     }
