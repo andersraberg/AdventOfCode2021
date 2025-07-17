@@ -16,6 +16,15 @@ jacoco {
     applyTo run
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = false
+        csv.required = false
+    }
+
+}
+
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.2'
