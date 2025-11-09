@@ -3,8 +3,8 @@ plugins {
     id "application"
     id "eclipse"
     id "jacoco"
-    id "org.sonarqube" version "4.4.1.3373"
-    id "com.autonomousapps.dependency-analysis"  version "1.32.0"
+    alias(libs.plugins.sonarqube)
+    alias(libs.plugins.dependencyanalysis)
 }
 
 repositories {
@@ -26,10 +26,10 @@ jacocoTestReport {
 }
 
 dependencies {
-    implementation 'com.google.guava:guava:28.1-jre'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.12.2'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation libs.guava
+    testImplementation libs.junitJupiterApi
+    testRuntimeOnly libs.junitJupiterEngine
+    testRuntimeOnly libs.junitPlatformLauncher
 }
 
 application {
@@ -42,7 +42,7 @@ application {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 test {
