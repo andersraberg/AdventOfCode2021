@@ -1,7 +1,7 @@
 node {
     git 'https://github.com/andersraberg/AdventOfCode2021.git'
 
-    dir('common-catalog') {
+    dir('../common-catalog') {
         git 'https://github.com/andersraberg/common-catalog.git'
     }
 
